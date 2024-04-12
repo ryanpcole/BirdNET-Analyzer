@@ -69,7 +69,7 @@ SIGMOID_SENSITIVITY = 1.0
 # Minimum confidence score to include in selection table 
 # (be aware: if APPLY_SIGMOID = False, this no longer represents 
 # probabilities and needs to be adjusted)
-MIN_CONFIDENCE = 0.8 
+MIN_CONFIDENCE = 0.1 
 
 # Number of samples to process at the same time. Higher values can increase
 # processing speed, but will also increase memory usage.

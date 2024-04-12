@@ -127,7 +127,11 @@ def handleRequest():
         if 'sf_thresh' in mdata:
             cfg.LOCATION_FILTER_THRESHOLD = max(0.01, min(0.99, float(mdata['sf_thresh'])))
         else:
-            cfg.LOCATION_FILTER_THRESHOLD = 0.03       
+            cfg.LOCATION_FILTER_THRESHOLD = 0.03
+        if 'min_confidence' in mdata:
+            cfg.MIN_CONFIDENCE = max(0.01, min(0.99, float(mdata['min_conf'])))
+        else:
+            cfg.MIN_CONFIDENCE = 0.1    
 
         # Set species list
         if not cfg.LATITUDE == -1 and not cfg.LONGITUDE == -1:
@@ -221,7 +225,7 @@ if __name__ == '__main__':
     cfg.FILE_STORAGE_PATH = args.spath
 
     # Set min_conf to 0.0, because we want all results
-    cfg.MIN_CONFIDENCE = 0.0
+    # cfg.MIN_CONFIDENCE = 0.0
 
     output_file = tempfile.NamedTemporaryFile(suffix='.txt', delete=False)
     output_file.close()
