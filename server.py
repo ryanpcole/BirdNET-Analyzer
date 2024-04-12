@@ -128,7 +128,7 @@ def handleRequest():
             cfg.LOCATION_FILTER_THRESHOLD = max(0.01, min(0.99, float(mdata['sf_thresh'])))
         else:
             cfg.LOCATION_FILTER_THRESHOLD = 0.03
-        if 'min_confidence' in mdata:
+        if 'min_conf' in mdata:
             cfg.MIN_CONFIDENCE = max(0.01, min(0.99, float(mdata['min_conf'])))
         else:
             cfg.MIN_CONFIDENCE = 0.1    
