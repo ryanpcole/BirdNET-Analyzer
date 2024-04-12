@@ -131,7 +131,10 @@ def handleRequest():
         if 'min_conf' in mdata:
             cfg.MIN_CONFIDENCE = max(0.01, min(0.99, float(mdata['min_conf'])))
         else:
-            cfg.MIN_CONFIDENCE = 0.1    
+            cfg.MIN_CONFIDENCE = 0.1
+
+        # Print Debugging here to check metadata args are getting passed to the config
+        print(cfg.getConfig()) 
 
         # Set species list
         if not cfg.LATITUDE == -1 and not cfg.LONGITUDE == -1:
