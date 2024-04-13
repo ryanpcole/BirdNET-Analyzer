@@ -129,7 +129,6 @@ def handleRequest():
         else:
             cfg.LOCATION_FILTER_THRESHOLD = 0.03
         if 'min_conf' in mdata:
-            print('changing min confidence to ' + mdata['min_conf'] )
             cfg.MIN_CONFIDENCE = max(0.01, min(0.99, float(mdata['min_conf'])))
         else:
             cfg.MIN_CONFIDENCE = 0.1
