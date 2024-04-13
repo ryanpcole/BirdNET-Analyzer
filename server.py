@@ -129,12 +129,13 @@ def handleRequest():
         else:
             cfg.LOCATION_FILTER_THRESHOLD = 0.03
         if 'min_conf' in mdata:
+            print('changing min confidence to ' + mdata['min_conf'] )
             cfg.MIN_CONFIDENCE = max(0.01, min(0.99, float(mdata['min_conf'])))
         else:
             cfg.MIN_CONFIDENCE = 0.1
-
+        
         # Print Debugging here to check metadata args are getting passed to the config
-        print(cfg.getConfig()) 
+        print(cfg.getConfig()['MIN_CONFIDENCE']) 
 
         # Set species list
         if not cfg.LATITUDE == -1 and not cfg.LONGITUDE == -1:
